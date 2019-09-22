@@ -26,7 +26,8 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-let seedPhrase = 'famous gap original decline nature tube middle flock attend area excite ivory';
+let seedPhrase = require('./key.js');
+
 let HDWalletProvider = require('./app/node_modules/truffle-hdwallet-provider');
 
 
@@ -39,7 +40,7 @@ module.exports = {
     },
 
     ropsten: {
-      provider: function () {
+      provider: function() {
         return new HDWalletProvider(seedPhrase, 'https://ropsten.infura.io/v3/269a47efb6c646a19cc5105b15301b62');
       },
       network_id: 3,
