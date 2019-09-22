@@ -27,14 +27,15 @@ contract Notary {
         myMapping[_checksum].timestamp = now;
         myMapping[_checksum].comments = _comments;
         myMapping[_checksum].setBy = msg.sender;
+        myMapping[_checksum].checkSum = _checksum;
 
         emit NewEntry(_checksum, _fileName, msg.sender);
     }
 
 
-    function entrySet(bytes32 _checksum) public view returns(string memory, uint, string memory, address) {
+    function entrySet(bytes32 _checksum) public view returns(string memory, uint, string memory, address, bytes32) {
         require(myMapping[_checksum].isSet,'error in soilidity!');
-        return (myMapping[_checksum].fileName, myMapping[_checksum].timestamp, myMapping[_checksum].comments, myMapping[_checksum].setBy);
+        return (myMapping[_checksum].fileName, myMapping[_checksum].timestamp, myMapping[_checksum].comments, myMapping[_checksum].setBy,myMapping[_checksum].checkSum);
     }
 
 

@@ -1,90 +1,116 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <!-- javascript -->
-    <script type="text/javascript" src="./index.js"></script>
+  <!-- javascript -->
+  <script type="text/javascript" src="./index.js"></script>
 
+  <!-- g fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Turret+Road&display=swap" rel="stylesheet">
+  <title>Hello, Block Notary!</title>
 
-    <title>Hello, Block Notary!</title>
-  </head>
+  <style media="screen">
+    body {
+      font-family: 'Lobster', cursive;
+      font-weight: 100;
+    }
 
-  <body>
+    h1 {
+      font-size: 50px;
+      border: dashed 3px blue;
+      color: white;
+      background-color: blue;
+      margin: 5% auto;
+      text-align: center;
+    }
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg">
-          <h1>Notary</h1>
-        </div>
-      </div>
+    #resultRead {}
 
+    #log,
+    #statusEnter,
+    #statusCheck {
+      font-family: 'Turret Road', cursive;
+    }
+  </style>
+</head>
 
+<body>
+
+  <div class="container">
+    <div class="row">
       <div class="col-lg">
-
-        <!-- Enter file -->
-        <h2>Upload a new File</h2>
-
-        <form action="" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="fileWrite">File:</label>
-            <input class="form-control" id="fileWrite" name="fileWrite" type="file" />
-          </div>
-
-          <div class="form-group">
-            <label for="comment">Comment:</label>
-            <input class="form-control" id="comment" type="text" name="comment" onfocus="this.value=''" />
-          </div>
-
-          <button class="btn btn-primary btn-block" type="button" id="enterData">
-            Submit new Entry
-          </button>
-        </form>
-      </div>
-      <div class="row">
-        <div class="col-lg small text-left">
-          <h5 class='ml-3 pt-3'>Log Status</h5>
-          <div id="statusEnter"></div>
-        </div>
-      </div>
-      <hr>
-
-      <!-- Checking FIle -->
-      <div class="col-lg">
-        <h2>Check a File</h2>
-        <form action="" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="fileRead">File:</label>
-            <input class="form-control" id="fileRead" name="fileRead" type="file" />
-          </div>
-          <button class="btn btn-success btn-block" type="button" id='checkData'>
-            Check now!
-          </button>
-        </form>
-        <div id="resultRead"></div>
-      </div>
-      <div class="row">
-        <div class="col-lg small text-left">
-          <h5 class='ml-3 pt-3'>Log Status</h5>
-          <div id="statusCheck"></div>
-        </div>
+        <h1>Notary</h1>
       </div>
     </div>
 
 
+    <div class="col-lg">
+
+      <!-- Enter file -->
+      <h2>Upload a new File</h2>
+
+      <form action="" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fileWrite">File:</label>
+          <input class="form-control" id="fileWrite" name="fileWrite" type="file" />
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <input class="form-control" id="comment" type="text" name="comment" onfocus="this.value=''" />
+        </div>
+
+        <button class="btn btn-warning btn-block" type="button" id="enterData">
+          Submit new File!
+        </button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-lg small text-left">
+        <h5 class='ml-3 pt-3' id='log'>Log Status</h5>
+        <div id="statusEnter" class='pl-3'></div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Checking FIle -->
+    <div class="col-lg">
+      <h2>Check a File</h2>
+      <form action="" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fileRead">File:</label>
+          <input class="form-control" id="fileRead" name="fileRead" type="file" />
+        </div>
+        <button class="btn btn-success btn-block" type="button" id='checkData'>
+          Check now!
+        </button>
+      </form>
+      <!-- result display -->
+      <div id="resultRead"></div>
+
+    </div>
+    <div class="row pl-1 mt-2">
+      <div class="col-lg small text-left">
+        <h5 class='ml-3 pt-1' id='log'>Log Status</h5>
+        <!-- log status -->
+        <div id="statusCheck" class='pl-3'></div>
+      </div>
+    </div>
+  </div>
 
 
-  </body>
+
+
+</body>
 
 </html>

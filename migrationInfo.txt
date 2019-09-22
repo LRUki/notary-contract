@@ -1,0 +1,22 @@
+2_Notary_migration.js
+=====================
+
+   Deploying 'Notary'
+   ------------------
+   > transaction hash:    0x7e2904b4d29a30c5997e5a8c5b04130c455bc03726c20b26097432b26eb0412b
+   > Blocks: 1            Seconds: 25
+   > contract address:    0x25a269CD748fFd00c43365A52e6214fc1D93aF04
+   > block number:        6436191
+   > block timestamp:     1569137113
+   > account:             0xb385aFB8800A12c8E064b121cD0849D938d402aE
+   > balance:             2.965832108089329418
+   > gas used:            836841
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00836841 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00836841 ETH
