@@ -53,7 +53,7 @@ var App = {
 
           $('#fileWrite')[0].value = "";
 
-          App.appendStatusEnter("Sending Transaction ... ");
+          App.appendStatusEnter("Sending Transaction ... (This process might take a while)");
           const {
             addEntry
           } = App.meta.methods;
